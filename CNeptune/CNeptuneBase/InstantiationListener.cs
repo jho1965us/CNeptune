@@ -30,8 +30,8 @@ namespace CNeptuneBase
                     if (value == null) throw new NotImplementedException();
                     m_listener = value;
                 }
-
-                while (m_Types.TryDequeue(out var _type))
+                Type _type;
+                while (m_Types.TryDequeue(out _type))
                 {
                     m_listener(_type);
                 }
